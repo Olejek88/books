@@ -18,11 +18,11 @@ abstract class ThemeFonts {
     final color = context.themeColors;
     switch (style) {
       case ThemeTextStyle.headline:
-        return TextStyle(fontSize: 20, fontWeight: medium, color: color.mainText);
+        return const TextStyle(fontSize: 55, fontWeight: bold, color: Colors.white);
       case ThemeTextStyle.defaultText:
-        return TextStyle(fontSize: 14, fontWeight: FontWeight.w300, height: 1.7143, color: color.defaultText);
+        return TextStyle(fontSize: 14, fontWeight: FontWeight.w300, color: color.defaultText);
       case ThemeTextStyle.title:
-        return TextStyle(color: color.defaultText, fontWeight: bold, fontSize: 28, height: 34 / 28);
+        return TextStyle(color: color.defaultText, fontWeight: medium, fontSize: 18);
       case ThemeTextStyle.body:
         return TextStyle(color: color.mainText, fontWeight: regular, fontSize: 16, height: 22/16);
     }

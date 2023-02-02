@@ -21,12 +21,10 @@ class AppRouter extends _i2.RootStackRouter {
 
   @override
   final Map<String, _i2.PageFactory> pagesMap = {
-    MainRouter.name: (routeData) {
-      return _i2.CustomPage<dynamic>(
+    MainRoute.name: (routeData) {
+      return _i2.AdaptivePage<dynamic>(
         routeData: routeData,
         child: const _i1.DashboardPage(),
-        opaque: true,
-        barrierDismissible: false,
       );
     }
   };
@@ -34,26 +32,20 @@ class AppRouter extends _i2.RootStackRouter {
   @override
   List<_i2.RouteConfig> get routes => [
         _i2.RouteConfig(
-          '/#redirect',
+          MainRoute.name,
           path: '/',
-          redirectTo: '/dashboard',
-          fullMatch: true,
-        ),
-        _i2.RouteConfig(
-          MainRouter.name,
-          path: '/dashboard',
-        ),
+        )
       ];
 }
 
 /// generated route for
 /// [_i1.DashboardPage]
-class MainRouter extends _i2.PageRouteInfo<void> {
-  const MainRouter()
+class MainRoute extends _i2.PageRouteInfo<void> {
+  const MainRoute()
       : super(
-          MainRouter.name,
-          path: '/dashboard',
+          MainRoute.name,
+          path: '/',
         );
 
-  static const String name = 'MainRouter';
+  static const String name = 'MainRoute';
 }
