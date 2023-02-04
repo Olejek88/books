@@ -40,7 +40,7 @@ class DashboardPage extends HookConsumerWidget {
                 crossAxisCount: max(widthCount, minCount),
                 mainAxisSpacing: 30,
                 crossAxisSpacing: 20,
-                childAspectRatio: 0.55,
+                childAspectRatio: 0.5,
               ),
               itemBuilder: (context, i) => BookItem(book: books.value![i]),
               itemCount: books.value?.length ?? 0,
