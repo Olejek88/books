@@ -13,6 +13,8 @@ _$_Book _$$_BookFromJson(Map<String, dynamic> json) => _$_Book(
       description: json['description'] as String,
       category: Category.fromJson(json['category'] as Map<String, dynamic>),
       imageUrl: json['imageUrl'] as String?,
+      link: json['link'] as String,
+      amazonImage: json['amazonImage'] as String?,
     );
 
 Map<String, dynamic> _$$_BookToJson(_$_Book instance) => <String, dynamic>{
@@ -22,4 +24,6 @@ Map<String, dynamic> _$$_BookToJson(_$_Book instance) => <String, dynamic>{
       'description': instance.description,
       'category': instance.category,
       'imageUrl': instance.imageUrl,
+      'link': instance.link,
+      'amazonImage': instance.amazonImage,
     };

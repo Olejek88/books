@@ -14,6 +14,8 @@ class Book with _$Book {
     required String description,
     required Category category,
     required String? imageUrl,
+    required String link,
+    required String? amazonImage
   }) = _Book;
 
   factory Book.fromJson(Map<String, Object?> json) => _$BookFromJson(json);

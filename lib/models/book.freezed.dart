@@ -26,6 +26,8 @@ mixin _$Book {
   String get description => throw _privateConstructorUsedError;
   Category get category => throw _privateConstructorUsedError;
   String? get imageUrl => throw _privateConstructorUsedError;
+  String get link => throw _privateConstructorUsedError;
+  String? get amazonImage => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -43,7 +45,9 @@ abstract class $BookCopyWith<$Res> {
       String author,
       String description,
       Category category,
-      String? imageUrl});
+      String? imageUrl,
+      String link,
+      String? amazonImage});
 
   $CategoryCopyWith<$Res> get category;
 }
@@ -67,6 +71,8 @@ class _$BookCopyWithImpl<$Res, $Val extends Book>
     Object? description = null,
     Object? category = null,
     Object? imageUrl = freezed,
+    Object? link = null,
+    Object? amazonImage = freezed,
   }) {
     return _then(_value.copyWith(
       uuid: null == uuid
@@ -93,6 +99,14 @@ class _$BookCopyWithImpl<$Res, $Val extends Book>
           ? _value.imageUrl
           : imageUrl // ignore: cast_nullable_to_non_nullable
               as String?,
+      link: null == link
+          ? _value.link
+          : link // ignore: cast_nullable_to_non_nullable
+              as String,
+      amazonImage: freezed == amazonImage
+          ? _value.amazonImage
+          : amazonImage // ignore: cast_nullable_to_non_nullable
+              as String?,
     ) as $Val);
   }
 
@@ -117,7 +131,9 @@ abstract class _$$_BookCopyWith<$Res> implements $BookCopyWith<$Res> {
       String author,
       String description,
       Category category,
-      String? imageUrl});
+      String? imageUrl,
+      String link,
+      String? amazonImage});
 
   @override
   $CategoryCopyWith<$Res> get category;
@@ -138,6 +154,8 @@ class __$$_BookCopyWithImpl<$Res> extends _$BookCopyWithImpl<$Res, _$_Book>
     Object? description = null,
     Object? category = null,
     Object? imageUrl = freezed,
+    Object? link = null,
+    Object? amazonImage = freezed,
   }) {
     return _then(_$_Book(
       uuid: null == uuid
@@ -164,6 +182,14 @@ class __$$_BookCopyWithImpl<$Res> extends _$BookCopyWithImpl<$Res, _$_Book>
           ? _value.imageUrl
           : imageUrl // ignore: cast_nullable_to_non_nullable
               as String?,
+      link: null == link
+          ? _value.link
+          : link // ignore: cast_nullable_to_non_nullable
+              as String,
+      amazonImage: freezed == amazonImage
+          ? _value.amazonImage
+          : amazonImage // ignore: cast_nullable_to_non_nullable
+              as String?,
     ));
   }
 }
@@ -177,7 +203,9 @@ class _$_Book implements _Book {
       required this.author,
       required this.description,
       required this.category,
-      required this.imageUrl});
+      required this.imageUrl,
+      required this.link,
+      required this.amazonImage});
 
   factory _$_Book.fromJson(Map<String, dynamic> json) => _$$_BookFromJson(json);
 
@@ -193,10 +221,14 @@ class _$_Book implements _Book {
   final Category category;
   @override
   final String? imageUrl;
+  @override
+  final String link;
+  @override
+  final String? amazonImage;
 
   @override
   String toString() {
-    return 'Book(uuid: $uuid, title: $title, author: $author, description: $description, category: $category, imageUrl: $imageUrl)';
+    return 'Book(uuid: $uuid, title: $title, author: $author, description: $description, category: $category, imageUrl: $imageUrl, link: $link, amazonImage: $amazonImage)';
   }
 
   @override
@@ -212,13 +244,16 @@ class _$_Book implements _Book {
             (identical(other.category, category) ||
                 other.category == category) &&
             (identical(other.imageUrl, imageUrl) ||
-                other.imageUrl == imageUrl));
+                other.imageUrl == imageUrl) &&
+            (identical(other.link, link) || other.link == link) &&
+            (identical(other.amazonImage, amazonImage) ||
+                other.amazonImage == amazonImage));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(
-      runtimeType, uuid, title, author, description, category, imageUrl);
+  int get hashCode => Object.hash(runtimeType, uuid, title, author, description,
+      category, imageUrl, link, amazonImage);
 
   @JsonKey(ignore: true)
   @override
@@ -241,7 +276,9 @@ abstract class _Book implements Book {
       required final String author,
       required final String description,
       required final Category category,
-      required final String? imageUrl}) = _$_Book;
+      required final String? imageUrl,
+      required final String link,
+      required final String? amazonImage}) = _$_Book;
 
   factory _Book.fromJson(Map<String, dynamic> json) = _$_Book.fromJson;
 
@@ -257,6 +294,10 @@ abstract class _Book implements Book {
   Category get category;
   @override
   String? get imageUrl;
+  @override
+  String get link;
+  @override
+  String? get amazonImage;
   @override
   @JsonKey(ignore: true)
   _$$_BookCopyWith<_$_Book> get copyWith => throw _privateConstructorUsedError;
