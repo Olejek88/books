@@ -97,3 +97,15 @@ flutter:
   # see https://flutter.dev/custom-fonts/#from-packages
   assets:
     - assets/
+
+  fonts:
+    - family: BaiJamjuree
+      fonts:
+        - asset: assets/fonts/BaiJamjuree-Light.ttf
+          weight: 300
+        - asset: assets/fonts/BaiJamjuree-Regular.ttf
+          weight: 400
+        - asset: assets/fonts/BaiJamjuree-Medium.ttf
+          weight: 500
+        - asset: assets/fonts/BaiJamjuree-Bold.ttf
+          weight: 700

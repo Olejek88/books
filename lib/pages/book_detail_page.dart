@@ -29,6 +29,7 @@ class BookDetailPage extends HookConsumerWidget {
             ),
             HStack(
               crossAxisAlignment: CrossAxisAlignment.start,
+              spacing: 20,
               children: [
                 GestureDetector(
                     onTap: () {
