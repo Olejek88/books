@@ -35,7 +35,8 @@ class BookDetailPage extends HookConsumerWidget {
                     onTap: () {
                       _launchURL(book.link);
                     },
-                    child: bookImage(book)),
+                    child: SizedBox(
+                      width: MediaQuery.of(context).size.width / 3, child: bookImage(book))),
                 Expanded(
                   child: VStack(
                     spacing: 10,

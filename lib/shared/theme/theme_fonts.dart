@@ -23,7 +23,7 @@ abstract class ThemeFonts {
       case ThemeTextStyle.defaultText:
         return TextStyle(fontSize: 14, fontWeight: FontWeight.w300, color: color.defaultText, fontFamily: baiJ);
       case ThemeTextStyle.title:
-        return TextStyle(color: color.defaultText, fontWeight: medium, fontSize: 20, fontFamily: baiJ);
+        return TextStyle(color: color.defaultText, fontWeight: medium, fontSize: 18, fontFamily: baiJ);
       case ThemeTextStyle.body:
         return TextStyle(color: color.mainText, fontWeight: regular, fontSize: 16, height: 22/16, fontFamily: baiJ);
     }

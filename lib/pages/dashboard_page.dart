@@ -18,7 +18,7 @@ class DashboardPage extends HookConsumerWidget {
     debugPrint("books = ${books.value?.length}");
 
     final widthCount = (MediaQuery.of(context).size.width ~/ 250).toInt();
-    const minCount = 4;
+    const minCount = 2;
     return Scaffold(
         key: const Key("Dashboard"),
         body: SingleChildScrollView(
@@ -38,8 +38,8 @@ class DashboardPage extends HookConsumerWidget {
               shrinkWrap: true,
               gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                 crossAxisCount: max(widthCount, minCount),
-                mainAxisSpacing: 30,
-                crossAxisSpacing: 20,
+                mainAxisSpacing: 20,
+                crossAxisSpacing: 10,
                 childAspectRatio: 0.5,
               ),
               itemBuilder: (context, i) => BookItem(book: books.value![i]),

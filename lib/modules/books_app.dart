@@ -2,7 +2,6 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:flutter/services.dart';
-import 'package:flutter_hooks/flutter_hooks.dart';
 
 import '../../main_lib.dart';
 import '../app_router.gr.dart';
@@ -11,7 +10,7 @@ import 'package:stack_trace/stack_trace.dart' as stack_trace;
 
 import '../shared/commons_ui.dart';
 
-const baseUrl = "http://api.book/storage/images/";
+const baseUrl = "http://api.bestsellersbook.shop/images/";
 
 class BookApp extends HookConsumerWidget {
   final _appRouter = AppRouter();
