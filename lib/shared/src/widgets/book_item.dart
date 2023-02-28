@@ -34,7 +34,7 @@ class BookItem extends ConsumerWidget {
                 ),
               ),
               const SizedBox(height: 10),
-              Text(book.author,
+              Text(book.authorName,
                   textAlign: TextAlign.start,
                   style: context.fontByStyle(ThemeTextStyle.title).copyWith(fontWeight: FontWeight.bold)),
               Text(book.title, textAlign: TextAlign.start, style: context.fontByStyle(ThemeTextStyle.title))

@@ -22,9 +22,10 @@ Book _$BookFromJson(Map<String, dynamic> json) {
 mixin _$Book {
   String get uuid => throw _privateConstructorUsedError;
   String get title => throw _privateConstructorUsedError;
-  String get author => throw _privateConstructorUsedError;
+  String get authorName => throw _privateConstructorUsedError;
   String get description => throw _privateConstructorUsedError;
   Category get category => throw _privateConstructorUsedError;
+  Author get author => throw _privateConstructorUsedError;
   String? get imageUrl => throw _privateConstructorUsedError;
   String get link => throw _privateConstructorUsedError;
   String? get amazonImage => throw _privateConstructorUsedError;
@@ -42,14 +43,16 @@ abstract class $BookCopyWith<$Res> {
   $Res call(
       {String uuid,
       String title,
-      String author,
+      String authorName,
       String description,
       Category category,
+      Author author,
       String? imageUrl,
       String link,
       String? amazonImage});
 
   $CategoryCopyWith<$Res> get category;
+  $AuthorCopyWith<$Res> get author;
 }
 
 /// @nodoc
@@ -67,9 +70,10 @@ class _$BookCopyWithImpl<$Res, $Val extends Book>
   $Res call({
     Object? uuid = null,
     Object? title = null,
-    Object? author = null,
+    Object? authorName = null,
     Object? description = null,
     Object? category = null,
+    Object? author = null,
     Object? imageUrl = freezed,
     Object? link = null,
     Object? amazonImage = freezed,
@@ -83,9 +87,9 @@ class _$BookCopyWithImpl<$Res, $Val extends Book>
           ? _value.title
           : title // ignore: cast_nullable_to_non_nullable
               as String,
-      author: null == author
-          ? _value.author
-          : author // ignore: cast_nullable_to_non_nullable
+      authorName: null == authorName
+          ? _value.authorName
+          : authorName // ignore: cast_nullable_to_non_nullable
               as String,
       description: null == description
           ? _value.description
@@ -95,6 +99,10 @@ class _$BookCopyWithImpl<$Res, $Val extends Book>
           ? _value.category
           : category // ignore: cast_nullable_to_non_nullable
               as Category,
+      author: null == author
+          ? _value.author
+          : author // ignore: cast_nullable_to_non_nullable
+              as Author,
       imageUrl: freezed == imageUrl
           ? _value.imageUrl
           : imageUrl // ignore: cast_nullable_to_non_nullable
@@ -117,6 +125,14 @@ class _$BookCopyWithImpl<$Res, $Val extends Book>
       return _then(_value.copyWith(category: value) as $Val);
     });
   }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $AuthorCopyWith<$Res> get author {
+    return $AuthorCopyWith<$Res>(_value.author, (value) {
+      return _then(_value.copyWith(author: value) as $Val);
+    });
+  }
 }
 
 /// @nodoc
@@ -128,15 +144,18 @@ abstract class _$$_BookCopyWith<$Res> implements $BookCopyWith<$Res> {
   $Res call(
       {String uuid,
       String title,
-      String author,
+      String authorName,
       String description,
       Category category,
+      Author author,
       String? imageUrl,
       String link,
       String? amazonImage});
 
   @override
   $CategoryCopyWith<$Res> get category;
+  @override
+  $AuthorCopyWith<$Res> get author;
 }
 
 /// @nodoc
@@ -150,9 +169,10 @@ class __$$_BookCopyWithImpl<$Res> extends _$BookCopyWithImpl<$Res, _$_Book>
   $Res call({
     Object? uuid = null,
     Object? title = null,
-    Object? author = null,
+    Object? authorName = null,
     Object? description = null,
     Object? category = null,
+    Object? author = null,
     Object? imageUrl = freezed,
     Object? link = null,
     Object? amazonImage = freezed,
@@ -166,9 +186,9 @@ class __$$_BookCopyWithImpl<$Res> extends _$BookCopyWithImpl<$Res, _$_Book>
           ? _value.title
           : title // ignore: cast_nullable_to_non_nullable
               as String,
-      author: null == author
-          ? _value.author
-          : author // ignore: cast_nullable_to_non_nullable
+      authorName: null == authorName
+          ? _value.authorName
+          : authorName // ignore: cast_nullable_to_non_nullable
               as String,
       description: null == description
           ? _value.description
@@ -178,6 +198,10 @@ class __$$_BookCopyWithImpl<$Res> extends _$BookCopyWithImpl<$Res, _$_Book>
           ? _value.category
           : category // ignore: cast_nullable_to_non_nullable
               as Category,
+      author: null == author
+          ? _value.author
+          : author // ignore: cast_nullable_to_non_nullable
+              as Author,
       imageUrl: freezed == imageUrl
           ? _value.imageUrl
           : imageUrl // ignore: cast_nullable_to_non_nullable
@@ -200,9 +224,10 @@ class _$_Book implements _Book {
   const _$_Book(
       {required this.uuid,
       required this.title,
-      required this.author,
+      required this.authorName,
       required this.description,
       required this.category,
+      required this.author,
       required this.imageUrl,
       required this.link,
       required this.amazonImage});
@@ -214,11 +239,13 @@ class _$_Book implements _Book {
   @override
   final String title;
   @override
-  final String author;
+  final String authorName;
   @override
   final String description;
   @override
   final Category category;
+  @override
+  final Author author;
   @override
   final String? imageUrl;
   @override
@@ -228,7 +255,7 @@ class _$_Book implements _Book {
 
   @override
   String toString() {
-    return 'Book(uuid: $uuid, title: $title, author: $author, description: $description, category: $category, imageUrl: $imageUrl, link: $link, amazonImage: $amazonImage)';
+    return 'Book(uuid: $uuid, title: $title, authorName: $authorName, description: $description, category: $category, author: $author, imageUrl: $imageUrl, link: $link, amazonImage: $amazonImage)';
   }
 
   @override
@@ -238,11 +265,13 @@ class _$_Book implements _Book {
             other is _$_Book &&
             (identical(other.uuid, uuid) || other.uuid == uuid) &&
             (identical(other.title, title) || other.title == title) &&
-            (identical(other.author, author) || other.author == author) &&
+            (identical(other.authorName, authorName) ||
+                other.authorName == authorName) &&
             (identical(other.description, description) ||
                 other.description == description) &&
             (identical(other.category, category) ||
                 other.category == category) &&
+            (identical(other.author, author) || other.author == author) &&
             (identical(other.imageUrl, imageUrl) ||
                 other.imageUrl == imageUrl) &&
             (identical(other.link, link) || other.link == link) &&
@@ -252,8 +281,8 @@ class _$_Book implements _Book {
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(runtimeType, uuid, title, author, description,
-      category, imageUrl, link, amazonImage);
+  int get hashCode => Object.hash(runtimeType, uuid, title, authorName,
+      description, category, author, imageUrl, link, amazonImage);
 
   @JsonKey(ignore: true)
   @override
@@ -273,9 +302,10 @@ abstract class _Book implements Book {
   const factory _Book(
       {required final String uuid,
       required final String title,
-      required final String author,
+      required final String authorName,
       required final String description,
       required final Category category,
+      required final Author author,
       required final String? imageUrl,
       required final String link,
       required final String? amazonImage}) = _$_Book;
@@ -287,11 +317,13 @@ abstract class _Book implements Book {
   @override
   String get title;
   @override
-  String get author;
+  String get authorName;
   @override
   String get description;
   @override
   Category get category;
+  @override
+  Author get author;
   @override
   String? get imageUrl;
   @override

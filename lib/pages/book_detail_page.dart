@@ -42,7 +42,7 @@ class BookDetailPage extends HookConsumerWidget {
                     spacing: 10,
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Text(book.author,
+                      Text(book.authorName,
                           textAlign: TextAlign.start,
                           style: context.fontByStyle(ThemeTextStyle.title).copyWith(fontWeight: FontWeight.bold)),
                       Text(book.title, textAlign: TextAlign.start, style: context.fontByStyle(ThemeTextStyle.title)),

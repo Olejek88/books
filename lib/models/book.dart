@@ -1,5 +1,6 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 
+import 'author.dart';
 import 'category.dart';
 
 part 'book.freezed.dart';
@@ -10,9 +11,10 @@ class Book with _$Book {
   const factory Book({
     required String uuid,
     required String title,
-    required String author,
+    required String authorName,
     required String description,
     required Category category,
+    required Author author,
     required String? imageUrl,
     required String link,
     required String? amazonImage

@@ -2,19 +2,24 @@ import 'dart:math';
 
 import 'package:books/providers/references_provider.dart';
 import 'package:books/shared/commons_ui.dart';
-import 'package:books/shared/src/widgets/author_item.dart';
+import 'package:books/shared/src/widgets/book_item.dart';
 import 'package:flutter/material.dart';
 
 import '../../main_lib.dart';
+import '../models/author.dart';
 
-class DashboardPage extends HookConsumerWidget {
-  const DashboardPage({Key? key}) : super(key: key);
+class AuthorPage extends HookConsumerWidget {
+  final Author author;
+
+  const AuthorPage({Key? key, required this.author}) : super(key: key);
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final authors = ref.watch(authorProvider);
-    final widthCount = (MediaQuery.of(context).size.width ~/ 200).toInt();
-    const minCount = 3;
+    final books = ref.watch(booksByAuthorProvider(author)).value ?? [];
+    debugPrint("books = ${books.length}");
+
+    final widthCount = (MediaQuery.of(context).size.width ~/ 250).toInt();
+    const minCount = 2;
     return Scaffold(
         key: const Key("Dashboard"),
         body: SingleChildScrollView(
@@ -38,8 +43,8 @@ class DashboardPage extends HookConsumerWidget {
                 crossAxisSpacing: 10,
                 childAspectRatio: 0.5,
               ),
-              itemBuilder: (context, i) => AuthorItem(author: authors.value![i]),
-              itemCount: authors.value?.length ?? 0,
+              itemBuilder: (context, i) => BookItem(book: books[i]),
+              itemCount: books.length,
             )
           ]),
         ));
