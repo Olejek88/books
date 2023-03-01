@@ -1,6 +1,5 @@
 import 'package:books/app_router.gr.dart';
 import 'package:flutter/material.dart';
-import 'package:url_launcher/url_launcher.dart';
 import '../../../main_lib.dart';
 import '../../commons_ui.dart';
 
@@ -36,8 +35,8 @@ class BookItem extends ConsumerWidget {
               const SizedBox(height: 10),
               Text(book.authorName,
                   textAlign: TextAlign.start,
-                  style: context.fontByStyle(ThemeTextStyle.title).copyWith(fontWeight: FontWeight.bold)),
-              Text(book.title, textAlign: TextAlign.start, style: context.fontByStyle(ThemeTextStyle.title))
+                  style: context.fontByStyle(ThemeTextStyle.title).copyWith(fontWeight: FontWeight.bold, color: Colors.black)),
+              Text(book.title, textAlign: TextAlign.start, style: context.fontByStyle(ThemeTextStyle.title).copyWith(color: Colors.black))
             ],
           ),
         ),

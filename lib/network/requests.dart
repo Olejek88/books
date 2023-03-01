@@ -4,7 +4,7 @@ import '../models/author.dart';
 
 part 'requests.g.dart';
 
-@RestApi(baseUrl: "http://api.books.de/")
+@RestApi(baseUrl: "http://api.bestsellersbook.shop/")
 abstract class RestClient {
   factory RestClient(Dio dio, {String baseUrl}) = _RestClient;
 

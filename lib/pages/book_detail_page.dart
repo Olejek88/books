@@ -12,56 +12,59 @@ class BookDetailPage extends HookConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    //final checklistItem = ref.watch(checklistItemsByIdProvider(checklistItemId));
-    return Scaffold(
-        key: const Key("Dashboard"),
-        body: SingleChildScrollView(
-          child: VStack(padding: const EdgeInsets.all(10), spacing: 10, children: [
-            Container(
-              height: 150,
-              width: MediaQuery.of(context).size.width,
-              decoration: const BoxDecoration(
-                  image: DecorationImage(image: AssetImage("assets/shop.jpg"), fit: BoxFit.cover),
-                  color: Colors.cyan,
-                  borderRadius: BorderRadius.all(Radius.circular(10))),
-              padding: const EdgeInsets.all(10),
-              child: Text("BookStore", style: context.fontByStyle(ThemeTextStyle.headline)),
-            ),
-            HStack(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              spacing: 20,
-              children: [
-                GestureDetector(
-                    onTap: () {
-                      _launchURL(book.link);
-                    },
-                    child: SizedBox(
-                      width: MediaQuery.of(context).size.width / 3, child: bookImage(book))),
-                Expanded(
-                  child: VStack(
-                    spacing: 10,
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Text(book.authorName,
-                          textAlign: TextAlign.start,
-                          style: context.fontByStyle(ThemeTextStyle.title).copyWith(fontWeight: FontWeight.bold)),
-                      Text(book.title, textAlign: TextAlign.start, style: context.fontByStyle(ThemeTextStyle.title)),
-                      Text(book.description,
-                          textAlign: TextAlign.start, style: context.fontByStyle(ThemeTextStyle.body)),
+    return Title(
+        title: book.title,
+        color: Colors.black,
+        child: Scaffold(
+          key: const Key("Dashboard"),
+          body: SingleChildScrollView(
+            child: VStack(padding: const EdgeInsets.all(10), spacing: 10, children: [
+              Container(
+                height: 150,
+                width: MediaQuery.of(context).size.width,
+                decoration: const BoxDecoration(
+                    image: DecorationImage(image: AssetImage("assets/shop.jpg"), fit: BoxFit.cover),
+                    color: Colors.cyan,
+                    borderRadius: BorderRadius.all(Radius.circular(10))),
+                padding: const EdgeInsets.all(10),
+                child: Text("BookStore", style: context.fontByStyle(ThemeTextStyle.headline)),
+              ),
+              HStack(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                spacing: 20,
+                children: [
+                  GestureDetector(
+                      onTap: () {
+                        _launchURL(book.link);
+                      },
+                      child: SizedBox(
+                        width: 150, child: bookImage(book))),
+                  Expanded(
+                    child: VStack(
+                      spacing: 10,
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(book.authorName,
+                            textAlign: TextAlign.start,
+                            style: context.fontByStyle(ThemeTextStyle.title).copyWith(fontWeight: FontWeight.bold)),
+                        Text(book.title, textAlign: TextAlign.start, style: context.fontByStyle(ThemeTextStyle.title)),
+                        Text(book.description,
+                            textAlign: TextAlign.start, style: context.fontByStyle(ThemeTextStyle.body)),
 /*
-                      Image.network(book.imageUrl ?? "", fit: BoxFit.fill,
-                          loadingBuilder: (BuildContext context, Widget child, ImageChunkEvent? loadingProgress) {
-                        if (loadingProgress == null) return child;
-                        return const Center(child: CircularProgressIndicator());
-                      })
+                        Image.network(book.imageUrl ?? "", fit: BoxFit.fill,
+                            loadingBuilder: (BuildContext context, Widget child, ImageChunkEvent? loadingProgress) {
+                          if (loadingProgress == null) return child;
+                          return const Center(child: CircularProgressIndicator());
+                        })
 */
-                    ],
-                  ),
-                )
-              ],
-            )
-          ]),
-        ));
+                      ],
+                    ),
+                  )
+                ],
+              )
+            ]),
+          )),
+    );
   }
 }
 

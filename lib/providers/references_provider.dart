@@ -4,7 +4,7 @@ import '../models/author.dart';
 import '../network/requests.dart';
 
 final clientProvider = Provider((ref) => Dio(BaseOptions(headers: {},
-    baseUrl: 'http://api.books.de')));
+    baseUrl: 'http://api.bestsellersbook.shop')));
 
 final categories = Provider.autoDispose<Future<List<Category>>>((ref) {
   return RestClient(ref.read(clientProvider)).getCategories();
