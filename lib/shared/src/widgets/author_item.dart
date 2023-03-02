@@ -32,7 +32,7 @@ class AuthorItem extends ConsumerWidget {
               ),
               const SizedBox(height: 5),
               Text(author.title,
-                  textAlign: TextAlign.start, maxLines: 2, overflow: TextOverflow.ellipsis,
+                  textAlign: TextAlign.center, maxLines: 2, overflow: TextOverflow.ellipsis,
                   style: context.fontByStyle(ThemeTextStyle.title).copyWith(fontWeight: FontWeight.bold)),
             ],
         ),

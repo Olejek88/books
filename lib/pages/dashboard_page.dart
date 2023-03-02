@@ -39,7 +39,7 @@ class DashboardPage extends HookConsumerWidget {
                 gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                   crossAxisCount: max(widthCount, minCount),
                   mainAxisSpacing: 20,
-                  childAspectRatio: 0.9,
+                  childAspectRatio: 0.7,
                   crossAxisSpacing: 10,
                 ),
                 itemBuilder: (context, i) => AuthorItem(author: authors.value![i]),

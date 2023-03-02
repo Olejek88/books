@@ -4,6 +4,7 @@ import 'package:url_launcher/url_launcher.dart';
 import '../../main_lib.dart';
 import '../shared/commons_ui.dart';
 import '../shared/src/widgets/book_item.dart';
+import '../shared/src/widgets/button_default.dart';
 
 class BookDetailPage extends HookConsumerWidget {
   final Book book;
@@ -13,9 +14,9 @@ class BookDetailPage extends HookConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     return Title(
-        title: book.title,
-        color: Colors.black,
-        child: Scaffold(
+      title: book.title,
+      color: Colors.black,
+      child: Scaffold(
           key: const Key("Dashboard"),
           body: SingleChildScrollView(
             child: VStack(padding: const EdgeInsets.all(10), spacing: 10, children: [
@@ -38,7 +39,9 @@ class BookDetailPage extends HookConsumerWidget {
                         _launchURL(book.link);
                       },
                       child: SizedBox(
-                        width: 150, child: bookImage(book))),
+                          width: 150,
+                          child: VStack(
+                              spacing: 15, children: [bookImage(book), const ButtonDefault(title: "Buy book")]))),
                   Expanded(
                     child: VStack(
                       spacing: 10,
